@@ -45,7 +45,7 @@ export function Navbar() {
         {/* Logo */}
         <a href="#" style={{ textDecoration: 'none' }}>
           <span style={{ color: '#f0f0f0', fontWeight: 700, fontSize: 18, letterSpacing: '-0.02em' }}>
-            Akhila<span style={{ color: '#6366f1' }}>.</span>
+            Dachepally Akhila<span style={{ color: '#6366f1' }}>.</span>
           </span>
         </a>
 
@@ -148,7 +148,7 @@ export function Navbar() {
       <style>{`
         .hidden-mobile { display: flex; }
         .show-mobile   { display: none;  }
-        @media (max-width: 640px) {
+        @media (max-width: 850px) {
           .hidden-mobile { display: none;  }
           .show-mobile   { display: block; }
         }

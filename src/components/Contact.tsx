@@ -126,7 +126,7 @@ export function Contact() {
         gap: 12,
       }}>
         <span style={{ color: '#f0f0f0', fontWeight: 700, fontSize: 16, letterSpacing: '-0.02em' }}>
-          Akhila<span style={{ color: '#6366f1' }}>.</span>
+          Dachepally Akhila<span style={{ color: '#6366f1' }}>.</span>
         </span>
         <span style={{ color: '#444', fontSize: 13 }}>
           © 2026 Dachepally Akhila · Built with React + Vite
