@@ -65,7 +65,7 @@ export function About() {
               { value: '3×', label: 'Tech Internships' },
               { value: '3', label: 'Full-Stack Projects' },
               { value: '5+', label: 'Google Certifications' },
-              { value: '2026', label: 'Graduating' },
+              { value: '2027', label: 'Graduating' },
             ].map(s => (
               <div key={s.label} style={{
                 background: '#161616',
@@ -113,6 +113,40 @@ export function About() {
           ))}
         </div>
       </div>
+
+      {/* Education */}
+      <FadeIn delay={0.3}>
+        <div style={{ marginTop: 64 }}>
+          <h3 style={{ fontSize: 24, fontWeight: 700, color: '#f0f0f0', marginBottom: 24 }}>Education</h3>
+          <div style={{
+            background: '#161616',
+            border: '1px solid #2a2a2a',
+            borderRadius: 12,
+            padding: '24px',
+            display: 'flex',
+            gap: 20,
+            alignItems: 'center',
+            transition: 'border-color 0.2s',
+          }}
+            onMouseEnter={e => (e.currentTarget.style.borderColor = '#6366f1')}
+            onMouseLeave={e => (e.currentTarget.style.borderColor = '#2a2a2a')}
+          >
+            <div style={{
+              width: 56, height: 56, borderRadius: 12, background: 'rgba(99,102,241,0.1)',
+              display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0,
+            }}>
+              <span style={{ color: '#6366f1', fontWeight: 800, fontSize: 20 }}>AU</span>
+            </div>
+            <div>
+              <h4 style={{ color: '#f0f0f0', fontSize: 18, fontWeight: 600, margin: 0, marginBottom: 4 }}>Anurag University, Hyderabad</h4>
+              <p style={{ color: '#888', fontSize: 15, margin: 0, marginBottom: 6 }}>B.Tech in Computer Science and Engineering</p>
+              <div style={{ display: 'flex', gap: 16, color: '#666', fontSize: 13, fontWeight: 500 }}>
+                <span style={{ background: 'rgba(255,255,255,0.05)', padding: '2px 8px', borderRadius: 4 }}>Graduating 2027</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </FadeIn>
 
       <style>{`
         @media (max-width: 768px) {

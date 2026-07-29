@@ -126,11 +126,28 @@ export function Contact() {
         gap: 12,
       }}>
         <span style={{ color: '#f0f0f0', fontWeight: 700, fontSize: 16, letterSpacing: '-0.02em' }}>
-          Dachepally Akhila<span style={{ color: '#6366f1' }}>.</span>
+          Dachepally Akhila
         </span>
-        <span style={{ color: '#444', fontSize: 13 }}>
-          © 2026 Dachepally Akhila · Built with React + Vite
-        </span>
+        
+        <div style={{ display: 'flex', alignItems: 'center', gap: 24 }}>
+          <span style={{ color: '#444', fontSize: 13 }}>
+            © 2026 Dachepally Akhila
+          </span>
+          <div style={{ display: 'flex', gap: 16, alignItems: 'center' }}>
+            <a href="https://github.com/Akhila-1703" target="_blank" rel="noreferrer" style={{ color: '#666', transition: 'color 0.2s' }} onMouseEnter={e=>e.currentTarget.style.color='#fff'} onMouseLeave={e=>e.currentTarget.style.color='#666'}>
+              <GithubIcon size={18} />
+            </a>
+            <a href="https://www.linkedin.com/in/dachepally-akhila-1685a2336/" target="_blank" rel="noreferrer" style={{ color: '#666', transition: 'color 0.2s' }} onMouseEnter={e=>e.currentTarget.style.color='#fff'} onMouseLeave={e=>e.currentTarget.style.color='#666'}>
+              <LinkedinIcon size={18} />
+            </a>
+            <a href="mailto:akhiladhachepally@gmail.com" style={{ color: '#666', transition: 'color 0.2s' }} onMouseEnter={e=>e.currentTarget.style.color='#fff'} onMouseLeave={e=>e.currentTarget.style.color='#666'}>
+              <Mail size={18} />
+            </a>
+            <a href="/resume.pdf" target="_blank" rel="noreferrer" style={{ color: '#666', transition: 'color 0.2s', fontSize: 13, fontWeight: 600, textDecoration: 'none' }} onMouseEnter={e=>e.currentTarget.style.color='#fff'} onMouseLeave={e=>e.currentTarget.style.color='#666'}>
+              CV
+            </a>
+          </div>
+        </div>
       </div>
     </section>
   )
