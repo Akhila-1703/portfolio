@@ -1,11 +1,9 @@
 // Hero.tsx
 
 const projectImages = [
-  'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80',
-  'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80',
-  'https://images.unsplash.com/photo-1555421689-d68471e189f2?w=600&q=80',
-  'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&q=80',
-  'https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=600&q=80',
+  '/portfolio/mealora.png',
+  '/portfolio/blog.png',
+  '/portfolio/hospital.png',
 ]
 
 export function Hero() {
