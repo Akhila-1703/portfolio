@@ -17,7 +17,7 @@ const projects = [
     ],
     accent: '#6366f1',
     github: 'https://github.com/Akhila-1703/mealora-app',
-    live: null,
+    live: 'https://mealora-app.vercel.app/',
     tag: 'FinTech + Logistics',
   },
   {
@@ -33,7 +33,7 @@ const projects = [
     ],
     accent: '#22c55e',
     github: 'https://github.com/Akhila-1703/blog-app',
-    live: null,
+    live: 'https://blog-app-xi-lovat.vercel.app/',
     tag: 'Security + RBAC',
   },
   {
@@ -49,7 +49,7 @@ const projects = [
     ],
     accent: '#f59e0b',
     github: 'https://github.com/Akhila-1703/hospital-management-app',
-    live: null,
+    live: 'https://hospital-management-app-xi.vercel.app/',
     tag: 'Healthcare + Auth',
   },
 ]
