@@ -1,56 +1,79 @@
+import { useState } from 'react'
 import { FadeIn } from './FadeIn'
-import { ExternalLink } from 'lucide-react'
+import { ExternalLink, Layers } from 'lucide-react'
 import { GithubIcon } from './Icons'
 
 const projects = [
   {
     number: '01',
     title: 'MealOra',
-    subtitle: 'Enterprise Logistics & Food Delivery Platform',
-    description: 'Built to solve the actual logistics of a daily Dabba (Tiffin) service — not just a simple CRUD food app. Handles complex state across immutable ledgers and timezone-aware cron jobs.',
-    stack: ['React.js', 'Vite', 'Tailwind CSS', 'Node.js', 'Express', 'MongoDB'],
+    subtitle: 'Automated Daily Meal Logistics & Double-Entry FinTech Platform',
+    description: 'Far beyond a basic food delivery app, MealOra is built to handle the complex, recurring subscription logistics of daily meal providers. It features immutable financial ledgers, timezone-aware business rule engines, and automated kitchen dispatch workflows.',
+    stack: ['React 19', 'Vite', 'Tailwind CSS', 'Node.js', 'Express', 'MongoDB Atlas', 'Razorpay', 'Zustand'],
     highlights: [
-      'Immutable wallet ledger tracking CREDIT and DEBIT transactions',
-      'Interactive skip calendar with @fullcalendar/react and timezone-aware 11AM IST cutoffs',
-      'Cron-job scheduler that auto-pauses billing when users skip meals',
-      'Admin analytics dashboard (Recharts) for kitchen inventory prediction',
+      'Double-Entry Wallet Ledger: Tracks immutable credit & debit transactions for full financial auditability',
+      'Timezone-Aware Logistics Engine: Enforces strict 11:00 AM IST cutoff rules for same-day delivery & cancellations',
+      'Interactive Skip Calendar: Built with @fullcalendar/react to let users pause meals & auto-credit refunds to wallet',
+      'Automated Cron Scheduler: Node-cron background jobs generate kitchen dispatch sheets & process recurring billing',
+      'XSS-Shielded Auth: Session tokens stored exclusively in HTTP-Only, SameSite cookies with Zustand state hydration',
     ],
     accent: '#6366f1',
     github: 'https://github.com/Akhila-1703/mealora-app',
     live: 'https://mealora-app.vercel.app/',
-    tag: 'FinTech + Logistics',
+    tag: 'FinTech + Logistics Engine',
+    image: '/portfolio/mealora/mealora_2.png',
+    gallery: [
+      '/portfolio/mealora/mealora_1.png',
+      '/portfolio/mealora/mealora_2.png',
+      '/portfolio/mealora/mealora_3.png',
+      '/portfolio/mealora/mealora_4.png',
+      '/portfolio/mealora/mealora_5.png',
+    ],
   },
   {
     number: '02',
     title: 'Blog App',
-    subtitle: 'Role-Based Content Publishing Platform',
-    description: 'A secure publishing platform built to demonstrate advanced web security practices and multi-tiered user access. Designed for content creators and administrators.',
-    stack: ['React 19', 'Vite', 'Express.js', 'MongoDB', 'Bcryptjs', 'JWT'],
+    subtitle: 'Enterprise Content Platform with 3-Tier RBAC & Soft-Deletion',
+    description: 'An enterprise-grade publishing system engineered to demonstrate advanced web security, multi-tenant permission isolation, and audit-compliant data persistence. Designed for Readers, Authors, and System Administrators.',
+    stack: ['React 19', 'Vite', 'Node.js', 'Express', 'MongoDB Atlas', 'JWT', 'Bcryptjs', 'Cloudinary'],
     highlights: [
-      'Soft-deletion architecture — articles are never hard-deleted (isArticleActive flag)',
-      'JWTs stored exclusively in HTTP-only cookies to prevent XSS attacks',
-      'Full RBAC — distinct middleware for Readers, Creators, and Administrators',
+      '3-Tier Granular RBAC: Custom middleware discriminating permissions across Readers, Authors, and Admins',
+      'Soft-Deletion Architecture: Articles are deactivated (isArticleActive) rather than hard-deleted for audit compliance',
+      'Stateless Cookie Security: JWT authentication Served strictly in HTTP-Only cookies to prevent XSS attacks',
+      'Cloudinary Pipeline: Dynamic image optimization & CDN hosting for user avatars and article headers',
+      'Embedded Subdocuments: Atomic Mongoose schema design for high-performance nested comment threads',
     ],
     accent: '#22c55e',
     github: 'https://github.com/Akhila-1703/blog-app',
     live: 'https://blog-app-xi-lovat.vercel.app/',
-    tag: 'Security + RBAC',
+    tag: 'Security + 3-Tier RBAC',
+    image: '/portfolio/blog/blog_1.png',
+    gallery: [
+      '/portfolio/blog/blog_1.png',
+      '/portfolio/blog/blog_2.png',
+    ],
   },
   {
     number: '03',
     title: 'Peoplecare Hospital',
-    subtitle: 'Centralized Healthcare Workflow System',
-    description: 'Unifies patient records, doctor scheduling, and admin operations into a secure digital environment, optimizing clinic resources and improving patient experience.',
-    stack: ['React.js', 'Node.js', 'Express', 'MongoDB', 'Nodemailer'],
+    subtitle: 'Centralized Electronic Health Record (EHR) & Clinical Workflow Platform',
+    description: 'A comprehensive healthcare operations system unifying patient record management, doctor scheduling, prescriptions, and multi-role administrative workflows to optimize hospital resources and patient care.',
+    stack: ['React.js', 'Node.js', 'Express', 'MongoDB', 'Nodemailer', 'REST API'],
     highlights: [
-      'Dynamic scheduling with doctor availability checking and specialization filtering',
-      'Secure patient history CRUD with protected multi-role access',
-      'Email notifications via Nodemailer for appointment confirmations',
+      'Conflict-Free Scheduling Engine: Real-time doctor availability checks filtered by specialization to prevent double-booking',
+      'EHR & Prescription CRUD: Secure digital tracking of patient medical histories, diagnostic notes, and prescriptions',
+      'Multi-Portal RBAC Isolation: Separate operational dashboards for Patients, Doctors, and Hospital Administrators',
+      'Automated Notification System: Integrated Nodemailer service sending real-time appointment confirmations',
     ],
     accent: '#f59e0b',
     github: 'https://github.com/Akhila-1703/hospital-management-app',
     live: 'https://hospital-management-app-xi.vercel.app/',
-    tag: 'Healthcare + Auth',
+    tag: 'Healthcare EHR + Auth',
+    image: '/portfolio/hospital/hospital_1.png',
+    gallery: [
+      '/portfolio/hospital/hospital_1.png',
+      '/portfolio/hospital/hospital_2.png',
+    ],
   },
 ]
 
@@ -109,52 +132,7 @@ export function Projects() {
                     perspective: 1200,
                   }}
                 >
-                  <div 
-                    className="project-visual-card"
-                    style={{
-                      background: `linear-gradient(135deg, ${p.accent}15 0%, #161616 100%)`,
-                      border: '1px solid rgba(255,255,255,0.05)',
-                      borderRadius: 24,
-                      padding: 40,
-                      minHeight: 360,
-                      display: 'flex',
-                      flexDirection: 'column',
-                      justifyContent: 'center',
-                      position: 'relative',
-                      transition: 'transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s ease',
-                      transformStyle: 'preserve-3d',
-                    }}
-                  >
-                    <div style={{
-                      transform: 'translateZ(40px)',
-                      display: 'flex',
-                      flexDirection: 'column',
-                      gap: 16,
-                    }}>
-                      <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-                        <span style={{ color: p.accent, fontWeight: 800, fontSize: 48, opacity: 0.2 }}>{p.number}</span>
-                      </div>
-                      <h3 style={{ color: '#f0f0f0', fontWeight: 800, fontSize: 32, letterSpacing: '-0.02em', margin: 0 }}>
-                        {p.title}
-                      </h3>
-                      <p style={{ color: '#888', fontSize: 15, lineHeight: 1.6, margin: 0 }}>
-                        {p.subtitle}
-                      </p>
-                    </div>
-                    {/* Floating decoration element inside 3D space */}
-                    <div style={{
-                      position: 'absolute',
-                      bottom: 40,
-                      right: 40,
-                      width: 80,
-                      height: 80,
-                      borderRadius: '50%',
-                      background: `radial-gradient(circle, ${p.accent} 0%, transparent 70%)`,
-                      filter: 'blur(30px)',
-                      opacity: 0.3,
-                      transform: 'translateZ(20px)',
-                    }} />
-                  </div>
+                  <ProjectVisualCard project={p} />
                 </div>
 
                 {/* Content Side */}
@@ -283,5 +261,103 @@ export function Projects() {
         }
       `}</style>
     </section>
+  )
+}
+
+function ProjectVisualCard({ project }: { project: any }) {
+  const [activeImg, setActiveImg] = useState(project.image)
+
+  return (
+    <div
+      className="project-visual-card"
+      style={{
+        background: '#141414',
+        border: '1px solid rgba(255,255,255,0.08)',
+        borderRadius: 20,
+        overflow: 'hidden',
+        boxShadow: '0 20px 40px rgba(0,0,0,0.5)',
+        transition: 'transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s ease',
+        transformStyle: 'preserve-3d',
+      }}
+    >
+      {/* Browser Window Bar */}
+      <div style={{
+        background: '#1e1e1e',
+        padding: '12px 16px',
+        borderBottom: '1px solid rgba(255,255,255,0.06)',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+      }}>
+        <div style={{ display: 'flex', gap: 6 }}>
+          <span style={{ width: 10, height: 10, borderRadius: '50%', background: '#ff5f56', display: 'inline-block' }} />
+          <span style={{ width: 10, height: 10, borderRadius: '50%', background: '#ffbd2e', display: 'inline-block' }} />
+          <span style={{ width: 10, height: 10, borderRadius: '50%', background: '#27c93f', display: 'inline-block' }} />
+        </div>
+        <span style={{ color: '#666', fontSize: 11, fontWeight: 500, letterSpacing: '0.04em' }}>
+          {project.title.toLowerCase()}.app
+        </span>
+        <div style={{ width: 34 }} />
+      </div>
+
+      {/* Main Image Screenshot View */}
+      <div style={{ position: 'relative', height: 260, overflow: 'hidden', background: '#0a0a0a' }}>
+        <img
+          src={activeImg}
+          alt={project.title}
+          style={{
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+            objectPosition: 'top',
+            transition: 'all 0.3s ease-in-out',
+          }}
+        />
+        <div style={{
+          position: 'absolute',
+          inset: 0,
+          background: 'linear-gradient(to bottom, transparent 60%, rgba(0,0,0,0.6) 100%)',
+          pointerEvents: 'none',
+        }} />
+      </div>
+
+      {/* Interactive Gallery Selector for MealOra */}
+      {project.gallery && project.gallery.length > 0 && (
+        <div style={{
+          padding: '12px 16px',
+          background: '#161616',
+          borderTop: '1px solid rgba(255,255,255,0.05)',
+          display: 'flex',
+          alignItems: 'center',
+          gap: 8,
+          overflowX: 'auto',
+        }}>
+          <span style={{ color: '#666', fontSize: 11, fontWeight: 600, display: 'flex', alignItems: 'center', gap: 4, marginRight: 4 }}>
+            <Layers size={12} /> Screens:
+          </span>
+          {project.gallery.map((imgUrl: string, idx: number) => (
+            <button
+              key={idx}
+              onClick={() => setActiveImg(imgUrl)}
+              style={{
+                width: 44,
+                height: 28,
+                borderRadius: 6,
+                overflow: 'hidden',
+                border: activeImg === imgUrl ? `2px solid ${project.accent}` : '1px solid rgba(255,255,255,0.1)',
+                padding: 0,
+                cursor: 'pointer',
+                opacity: activeImg === imgUrl ? 1 : 0.5,
+                transition: 'all 0.2s',
+                flexShrink: 0,
+                background: '#000',
+              }}
+            >
+              <img src={imgUrl} alt={`Screen ${idx + 1}`} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+            </button>
+          ))}
+        </div>
+      )}
+    </div>
   )
 }

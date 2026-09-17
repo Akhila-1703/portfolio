@@ -1,9 +1,15 @@
 // Hero.tsx
 
 const projectImages = [
-  '/portfolio/mealora.png',
-  '/portfolio/blog.png',
-  '/portfolio/hospital.png',
+  '/portfolio/mealora/mealora_1.png',
+  '/portfolio/mealora/mealora_2.png',
+  '/portfolio/mealora/mealora_3.png',
+  '/portfolio/mealora/mealora_4.png',
+  '/portfolio/mealora/mealora_5.png',
+  '/portfolio/blog/blog_1.png',
+  '/portfolio/blog/blog_2.png',
+  '/portfolio/hospital/hospital_1.png',
+  '/portfolio/hospital/hospital_2.png',
 ]
 
 export function Hero() {
